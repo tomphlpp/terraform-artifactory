@@ -6,16 +6,16 @@
 2. <u>Synchronize ad groups in Artifactory*</u>
 3. Submit firewall requests
 4. <u>Provision repositories*</u><br>
-    create dev and prod locals:<br>
+    a. create dev and prod locals:<br>
         **\<team>-\<package_type>-dev-local**<br>
         **\<team>-\<package_type>-prod-local**<br>
-    add remotes if the location hasn't been added already, ex:<br>
+    b. add remotes if the location hasn't been added already, ex:<br>
         **docker-\<unique-site-name>-remote**<br>
-    create virtual repos that include remotes and locals:<br>
+    c. create virtual repos that include remotes and locals:<br>
         **\<team>-\<package_type>-dev**<br>
-        - this should include any remotes and dev locals<br>
+          - this should include any remotes and dev locals<br>
         **\<team>-\<package_type>-prod**<br>
-        - includes remotes and prod locals<br><br>
+          - includes remotes and prod locals<br><br>
     Should be able to provision Docker, Helm, Maven, NPM, Nuget, and Generic repository types<br><br>
 5. <u>Add and Update Permissions*</u><br>
     - For dev and prod, add a permission with no users that includes an AD group imported in step 2.<br>
@@ -48,7 +48,6 @@
 │   │   ├── main.tf
 │   │   └── variables.tf
 │   └── repositories
-│       ├── generate_modules.py
 │       ├── local_repos.tf
 │       ├── locals.tf
 │       ├── providers.tf
@@ -57,6 +56,7 @@
 │       └── virtual_repos.tf
 ├── README.md
 └── repos.yaml
+
 ```
 
 [Terraform's Artifactory Resources](https://registry.terraform.io/providers/jfrog/artifactory/latest/docs)
