@@ -2,6 +2,8 @@
 
 ### Steps to do this manually:
 
+[Already existing documentation](https://firstcitizens-my.sharepoint.com/:w:/p/feruza_allaberganova/ETarByulDW9GrI5SwKx0eXIBWF4Jk7CEsIoBI3VPSptVEA?e=aPFELd)
+
 1. Request AD groups for dev and prod if you haven't already
 2. <u>Synchronize ad groups in Artifactory*</u>
 3. Submit firewall requests
