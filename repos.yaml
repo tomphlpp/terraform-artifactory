@@ -1,0 +1,29 @@
+repositories:
+  - team: "teama"
+    package_type: "docker"
+    repo_type: remote
+    repo_layout_ref: "simple-default"
+    description: "docker repository for Team A"
+    notes: "Repository for storing Docker images"
+    url: https://registry-1.docker.io/
+
+  - team: "teamb"
+    package_type: "generic"
+    repo_type: local
+    repo_layout_ref: "simple-default"
+    description: "generic repository for Team B"
+    notes: "Repository for storing generic artifacts"
+  
+  - team: "teama"
+    package_type: "docker"
+    repo_type: local
+    repo_layout_ref: "simple-default"
+    description: "local docker repository for Team A"
+    notes: "Repository for storing Docker images"
+
+teams:
+  - teamA
+  - teamB
+  - teamC
+  - teamD
+  - teamE
