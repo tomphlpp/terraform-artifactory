@@ -9,8 +9,9 @@
     a. create dev and prod locals:<br>
         **\<team>-\<package_type>-dev-local**<br>
         **\<team>-\<package_type>-prod-local**<br>
-    b. add remotes if the location hasn't been added already, ex:<br>
-        **docker-\<unique-site-name>-remote**<br>
+    b. UPDATE: each team gets a remote docker repo in their name to avoid scanning everything in dockerhub:<br>
+        **\<team>-docker-remote**<br>
+        other remote repositories, registry.npm.org for example, get drawn straight in without an Artifactory name.<br>
     c. create virtual repos that include remotes and locals:<br>
         **\<team>-\<package_type>-dev**<br>
           - this should include any remotes and dev locals<br>
