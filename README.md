@@ -15,8 +15,8 @@
         **\<team>-\<package_type>-dev**<br>
         - this should include any remotes and dev locals<br>
         **\<team>-\<package_type>-prod**<br>
-        - includes remotes and prod locals<br>
-
+        - includes remotes and prod locals<br><br>
+    Should be able to provision Docker, Helm, Maven, NPM, Nuget, and Generic repository types<br><br>
 5. <u>Add and Update Permissions*</u><br>
     - For dev and prod, add a permission with no users that includes an AD group imported in step 2.<br>
       Example for a dev permission:<br>
@@ -30,7 +30,7 @@
 <br>
       
 
-*This is a Terraform module that can do steps 2, 4, and 5. 
+*This is a Terraform module that will be able to do steps 2, 4, and 5. 
 
 ### Module Structure
 ```
