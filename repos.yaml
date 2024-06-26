@@ -1,29 +1,36 @@
-repositories:
-  - team: "teama"
-    package_type: "docker"
-    repo_type: remote
-    repo_layout_ref: "simple-default"
-    description: "docker repository for Team A"
-    notes: "Repository for storing Docker images"
-    url: https://registry-1.docker.io/
+local_repos:
+  - team: team1
+    package_type: generic
+    repo_layout_ref: generic-default
+    description: "Team 1 generic repo"
+    notes: "Some notes about this repo"
+  - team: team2
+    package_type: helm
+    repo_layout_ref: helm-default
+    description: "Team 2 helm repo"
+    notes: "Some notes about this repo"
+  - team: team3
+    package_type: npm
+    repo_layout_ref: npm-default
+    description: "Team 3 npm repo"
+    notes: "Some notes about this repo"
+  - team: team4
+    package_type: pypi
+    repo_layout_ref: pypi-default
+    description: "Team 4 pypi repo"
+    notes: "Some notes about this repo"
+  - team: team5
+    package_type: nuget
+    repo_layout_ref: nuget-default
+    description: "Team 5 nuget repo"
+    notes: "Some notes about this repo"
 
-  - team: "teamb"
-    package_type: "generic"
-    repo_type: local
-    repo_layout_ref: "simple-default"
-    description: "generic repository for Team B"
-    notes: "Repository for storing generic artifacts"
-  
-  - team: "teama"
-    package_type: "docker"
-    repo_type: local
-    repo_layout_ref: "simple-default"
-    description: "local docker repository for Team A"
-    notes: "Repository for storing Docker images"
-
-teams:
-  - teamA
-  - teamB
-  - teamC
-  - teamD
-  - teamE
+remote_repos:
+  helm:
+    - "https://charts.helm.sh/stable"
+  npm:
+    - "https://registry.npmjs.org"
+  pypi:
+    - "https://pypi.org/simple"
+  nuget:
+    - "https://api.nuget.org/v3/index.json"
