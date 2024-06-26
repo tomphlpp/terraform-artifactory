@@ -1,4 +1,4 @@
-#--- repositories/providers.tf ---#
+#--- driver/provider.tf ---#
 
 terraform {
   required_providers {
@@ -6,7 +6,7 @@ terraform {
       source  = "jfrog/artifactory"
       version = "10.5.1"
     }
-    external = {
+     external = {
       source  = "hashicorp/external"
       version = "~> 2.0"
     }
