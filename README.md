@@ -38,12 +38,12 @@
 
 | Type    | Local Resource (Dev)           | Local Resource (Prod)           | Virtual Resource (Dev)           | Virtual Resource (Prod)           | Remote Resource                             |
 |---------|--------------------------------|---------------------------------|----------------------------------|----------------------------------|---------------------------------------------|
-| Generic | `<team>-generic-dev-local`     | `<team>-generic-prod-local`     | `<team>-generic-dev-virtual`     | `<team>-generic-prod-virtual`    | ??                              |
-| Helm    | `<team>-helm-dev-local`        | `<team>-helm-prod-local`        | `<team>-helm-dev-virtual`        | `<team>-helm-prod-virtual`       | [https://charts.helm.sh/stable](https://charts.helm.sh/stable) |
-| NPM     | `<team>-npm-dev-local`         | `<team>-npm-prod-local`         | `<team>-npm-dev-virtual`         | `<team>-npm-prod-virtual`        | [https://registry.npmjs.org](https://registry.npmjs.org)         |
-| NuGet   | `<team>-nuget-dev-local`       | `<team>-nuget-prod-local`       | `<team>-nuget-dev-virtual`       | `<team>-nuget-prod-virtual`      | [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) |
-| PyPI    | `<team>-pypi-dev-local`        | `<team>-pypi-prod-local`        | `<team>-pypi-dev-virtual`        | `<team>-pypi-prod-virtual`       | [https://pypi.org/simple](https://pypi.org/simple)               |
-| Docker  | `<team>-docker-dev-local`      | `<team>-docker-prod-local`      | `<team>-docker-dev-virtual`      | `<team>-docker-prod-virtual`     | `<team>-docker-remote`                     |
+| Generic | `<team>-generic-dev-local`     | `<team>-generic-prod-local`     | `<team>-generic-dev`     | `<team>-generic-prod`    | ??                              |
+| Helm    | `<team>-helm-dev-local`        | `<team>-helm-prod-local`        | `<team>-helm-dev`        | `<team>-helm-prod`       | [https://charts.helm.sh/stable](https://charts.helm.sh/stable) |
+| NPM     | `<team>-npm-dev-local`         | `<team>-npm-prod-local`         | `<team>-npm-dev`         | `<team>-npm-prod`        | [https://registry.npmjs.org](https://registry.npmjs.org)         |
+| NuGet   | `<team>-nuget-dev-local`       | `<team>-nuget-prod-local`       | `<team>-nuget-dev`       | `<team>-nuget-prod`      | [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) |
+| PyPI    | `<team>-pypi-dev-local`        | `<team>-pypi-prod-local`        | `<team>-pypi-dev`        | `<team>-pypi-prod`       | [https://pypi.org/simple](https://pypi.org/simple)               |
+| Docker  | `<team>-docker-dev-local`      | `<team>-docker-prod-local`      | `<team>-docker-dev`      | `<team>-docker-prod`     | `<team>-docker-remote`                     |
 
 
 ### Module Structure
