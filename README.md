@@ -35,7 +35,6 @@
 
 ### We should be able to create these resources with these names: 
 
-![Repo Types Chart with Remotes](path/to/your/image/repo_types_chart_with_remotes.png)
 
 | Type    | Local Resource (Dev)           | Local Resource (Prod)           | Virtual Resource (Dev)           | Virtual Resource (Prod)           | Remote Resource                             |
 |---------|--------------------------------|---------------------------------|----------------------------------|----------------------------------|---------------------------------------------|
