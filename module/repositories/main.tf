@@ -114,4 +114,53 @@ resource "artifactory_virtual_npm_repository" "virtual_npm_repos" {
   ]
 }
 
-# Repeat for other virtual repositories...
+resource "artifactory_virtual_nuget_repository" "virtual_nuget_repos" {
+  for_each = { for r in local.repo_definitions : r.key => r if r.package_type == "nuget" && contains(keys(artifactory_local_nuget_repository.nuget_repos), r.key) }
+
+  key                        = lower("${each.value.team}-${each.value.package_type}-${each.value.suffix == "dev-local" ? "dev" : "prod"}")
+  repositories               = concat(
+    [each.value.key],
+    lookup(local.remote_repos, "nuget", [])
+  )
+  default_deployment_repo    = lower(each.value.key)
+  repo_layout_ref            = each.value.repo_layout_ref
+  description                = each.value.description
+  notes                      = each.value.notes
+  depends_on = [
+    artifactory_local_nuget_repository.nuget_repos
+  ]
+}
+
+resource "artifactory_virtual_pypi_repository" "virtual_pypi_repos" {
+  for_each = { for r in local.repo_definitions : r.key => r if r.package_type == "pypi" && contains(keys(artifactory_local_pypi_repository.pypi_repos), r.key) }
+
+  key                        = lower("${each.value.team}-${each.value.package_type}-${each.value.suffix == "dev-local" ? "dev" : "prod"}")
+  repositories               = concat(
+    [each.value.key],
+    lookup(local.remote_repos, "pypi", [])
+  )
+  default_deployment_repo    = lower(each.value.key)
+  repo_layout_ref            = each.value.repo_layout_ref
+  description                = each.value.description
+  notes                      = each.value.notes
+  depends_on = [
+    artifactory_local_pypi_repository.pypi_repos
+  ]
+}
+
+resource "artifactory_virtual_docker_repository" "virtual_docker_repos" {
+  for_each = { for r in local.repo_definitions : r.key => r if r.package_type == "docker" && contains(keys(artifactory_local_docker_repository.docker_repos), r.key) }
+
+  key                        = lower("${each.value.team}-${each.value.package_type}-${each.value.suffix == "dev-local" ? "dev" : "prod"}")
+  repositories               = concat(
+    [each.value.key],
+    lookup(local.remote_repos, "docker", [])
+  )
+  default_deployment_repo    = lower(each.value.key)
+  repo_layout_ref            = each.value.repo_layout_ref
+  description                = each.value.description
+  notes                      = each.value.notes
+  depends_on = [
+    artifactory_local_docker_repository.docker_repos
+  ]
+}
