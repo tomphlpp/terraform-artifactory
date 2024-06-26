@@ -6,6 +6,8 @@ locals {
   local_repos = local.repos_config.local_repos
   remote_repos = local.repos_config.remote_repos
 
+
+  #flattened list of maps names repos for dev and prod environments 
   repo_definitions = flatten([
     for repo in local.local_repos : [
       for suffix in local.suffixes : {

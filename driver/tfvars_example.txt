@@ -1,5 +1,0 @@
-#credentials and tokens go here
-
-jfrog_url          = "https://tomdemo.jfrog.io"
-jfrog_access_token = "<whatever-token>"
-path_to_repos_yaml = "<path to yaml>"
