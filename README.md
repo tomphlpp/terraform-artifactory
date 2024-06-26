@@ -31,32 +31,45 @@
 <br>
       
 
-*This is a Terraform module that will be able to do steps 2, 4, and 5. 
+*This is a Terraform module that will be able to do steps 2, 4, and 5. <br>
+
+### We should be able to create these resources with these names: 
+
+![Repo Types Chart with Remotes](path/to/your/image/repo_types_chart_with_remotes.png)
+
+| Type    | Local Resource (Dev)           | Local Resource (Prod)           | Virtual Resource (Dev)           | Virtual Resource (Prod)           | Remote Resource                             |
+|---------|--------------------------------|---------------------------------|----------------------------------|----------------------------------|---------------------------------------------|
+| Generic | `<team>-generic-dev-local`     | `<team>-generic-prod-local`     | `<team>-generic-dev-virtual`     | `<team>-generic-prod-virtual`    | ??                              |
+| Helm    | `<team>-helm-dev-local`        | `<team>-helm-prod-local`        | `<team>-helm-dev-virtual`        | `<team>-helm-prod-virtual`       | [https://charts.helm.sh/stable](https://charts.helm.sh/stable) |
+| NPM     | `<team>-npm-dev-local`         | `<team>-npm-prod-local`         | `<team>-npm-dev-virtual`         | `<team>-npm-prod-virtual`        | [https://registry.npmjs.org](https://registry.npmjs.org)         |
+| NuGet   | `<team>-nuget-dev-local`       | `<team>-nuget-prod-local`       | `<team>-nuget-dev-virtual`       | `<team>-nuget-prod-virtual`      | [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) |
+| PyPI    | `<team>-pypi-dev-local`        | `<team>-pypi-prod-local`        | `<team>-pypi-dev-virtual`        | `<team>-pypi-prod-virtual`       | [https://pypi.org/simple](https://pypi.org/simple)               |
+| Docker  | `<team>-docker-dev-local`      | `<team>-docker-prod-local`      | `<team>-docker-dev-virtual`      | `<team>-docker-prod-virtual`     | `<team>-docker-remote`                     |
+
 
 ### Module Structure
 ```
+tphilipp@fedora~/artifactory_provisioning$ tree .
 .
-├── driver
-│   ├── main.tf
-│   ├── terraform.tfstate
-│   ├── terraform.tfstate.backup
-│   ├── terraform.tfvars
-│   ├── tfvars_example.txt
-│   └── variables.tf
+├── main.tf
 ├── module
 │   ├── ldap
 │   ├── permissions
 │   │   ├── main.tf
 │   │   └── variables.tf
 │   └── repositories
-│       ├── local_repos.tf
 │       ├── locals.tf
-│       ├── providers.tf
-│       ├── remote_repos.tf
-│       ├── variables.tf
-│       └── virtual_repos.tf
+│       ├── main.tf
+│       └── variables.tf
+├── provider.tf
 ├── README.md
-└── repos.yaml
+├── repos.yaml
+├── terraform.tfstate
+├── terraform.tfstate.backup
+├── terraform.tfvars
+├── tfvars_example.txt
+└── variables.tf
+
 
 ```
 
