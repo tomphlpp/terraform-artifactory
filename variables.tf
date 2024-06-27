@@ -1,4 +1,4 @@
-#--- driver/variables.tf ---#
+#--- variables.tf ---#
 
 variable "jfrog_url" {
   description = "URL for artifactory instance"
