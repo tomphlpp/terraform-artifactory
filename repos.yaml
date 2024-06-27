@@ -2,28 +2,56 @@ local_repos:
   - team: team1
     package_type: generic
     repo_layout_ref: "simple-default"
-    description: "Team 1 generic repo"
+    description: "generic repo"
     notes: "Some notes about this repo"
+    env: "dev"
   - team: team2
     package_type: helm
     repo_layout_ref: "simple-default"
-    description: "Team 2 helm repo"
+    description: " helm repo"
     notes: "Some notes about this repo"
+    env: "prod"
   - team: team3
     package_type: npm
     repo_layout_ref: "npm-default"
-    description: "Team 3 npm repo"
+    description: "npm repo"
     notes: "Some notes about this repo"
+    env: "prod"
   - team: team4
     package_type: pypi
     repo_layout_ref: "simple-default"
-    description: "Team 4 pypi repo"
+    description: " pypi repo"
     notes: "Some notes about this repo"
+    env: "dev"
   - team: team5
     package_type: nuget
     repo_layout_ref: "nuget-default"
-    description: "Team 5 nuget repo"
+    description: "nuget repo"
     notes: "Some notes about this repo"
+    env: "prod"
+  - team: team1
+    package_type: docker
+    repo_layout_ref: "simple-default"
+    description: "Docker local repo"
+    notes: "Some notes about this repo"
+    env: "dev"
+    remote_urls:
+      - "https://hub.docker.com/repository/docker/tomphlpps/chat-tester/general"
+      - "https://hub.docker.com/repository/docker/tomphlpps/fast-api-container/general"
+  - team: team2
+    package_type: docker
+    repo_layout_ref: "simple-default"
+    description: "Docker local repo"
+    notes: "Some notes about this repo"
+    env: "prod"
+    remote_urls:
+      - "https://hub.docker.com/repository/docker/tomphlpps/testing-tf/general"
+  - team: team3
+    package_type: docker
+    repo_layout_ref: "simple-default"
+    description: " Docker local repo"
+    notes: "Some notes about this repo"
+    env: "dev"
 
 remote_repos:
   helm:

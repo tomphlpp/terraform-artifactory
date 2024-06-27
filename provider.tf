@@ -1,4 +1,4 @@
-#--- driver/provider.tf ---#
+#--- provider.tf ---#
 
 terraform {
   required_providers {

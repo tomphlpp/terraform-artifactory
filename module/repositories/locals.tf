@@ -1,24 +1,26 @@
-#--- modules/repositories/locals.tf ---#
+#--- module/repositories/locals.tf ---#
+
 
 locals {
-  suffixes = ["dev-local", "prod-local"]
   repos_config = yamldecode(file(var.path_to_repos_yaml))
   local_repos = local.repos_config.local_repos
-  remote_repos = local.repos_config.remote_repos
+  remote_repos = {
+    helm  = local.repos_config.remote_repos.helm
+    npm   = local.repos_config.remote_repos.npm
+    pypi  = local.repos_config.remote_repos.pypi
+    nuget = local.repos_config.remote_repos.nuget
+  }
 
-
-  #flattened list of maps names repos for dev and prod environments 
-  repo_definitions = flatten([
-    for repo in local.local_repos : [
-      for suffix in local.suffixes : {
-        key             = "${repo.team}-${repo.package_type}-${suffix}"
-        team            = repo.team
-        package_type    = repo.package_type
-        suffix          = suffix
-        repo_layout_ref = repo.repo_layout_ref
-        description     = lookup(repo, "description", null)
-        notes           = lookup(repo, "notes", null)
-      }
-    ]
-  ])
+  repo_definitions = [
+    for repo in local.local_repos : {
+      key             = "${repo.team}-${repo.package_type}-${repo.env}-local"
+      team            = repo.team
+      package_type    = repo.package_type
+      env             = repo.env
+      repo_layout_ref = repo.repo_layout_ref
+      description     = repo.description
+      notes           = repo.notes
+      remote_urls     = lookup(repo, "remote_urls", [])
+    }
+  ]
 }
